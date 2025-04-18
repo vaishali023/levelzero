@@ -17,7 +17,7 @@ export default function Header() {
             <NavLink
               key={path}
               to={path}
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 `capitalize text-sm font-medium transition duration-150 ${
                   isActive
                     ? "text-white underline underline-offset-4"
@@ -29,7 +29,9 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
-        <button className="">...</button>
+        <div className="relative">
+          <button className="">...</button>
+        </div>
       </div>
       <ConnectButton
         accent="rgb(171 154 255)"
