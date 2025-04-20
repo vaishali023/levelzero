@@ -5,7 +5,7 @@ import SendForm from "../components/SendForm";
 export default function Buy() {
   const [activeTab, setActiveTab] = useState<"buy" | "send">("buy");
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-6">
       <div className="flex bg-[#222] rounded-full mb-6">
         <button
           onClick={() => setActiveTab("buy")}

@@ -9,7 +9,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full text-white bg-[#111] flex items-center justify-between z-50 px-6 py-4">
+    <header className="fixed top-0 w-full text-white bg-[#111] flex items-center justify-between z-50 px-6 py-4 border-b border-gray-700">
       <div className="flex items-center gap-10">
         <h1 className="text-xl font-bold tracking-tight">levelzero</h1>
         <nav className="flex gap-4">
