@@ -3,8 +3,8 @@ import DropdownRow from "./DropdownRow";
 import InputWithDropdown from "./InputWithDropdownRow";
 import ModalList from "./ModalList";
 import { currencyList } from "../data/currencies";
-import { tokenList } from "../data/tokens";
 import { platformList } from "../data/platforms";
+import TokenListModal from "../modals/TokenListModal";
 
 type Token = {
   symbol: string;
@@ -72,7 +72,7 @@ export default function BuyForm() {
         className="text-sm flex items-center gap-1 text-white hover:text-gray-300 px-4 py-2 border border-gray-600 rounded-full"
       >
         {showRecipientInput
-          ? "- Remove Custom Recipient"
+          ? "- Add Custom Recipient"
           : "+ Add Custom Recipient"}
       </button>
       {showRecipientInput && (
@@ -106,21 +106,6 @@ export default function BuyForm() {
         />
       )}
 
-      {modalType === "token" && (
-        <ModalList
-          title="Select a Token"
-          searchPlaceholder="Search token"
-          options={tokenList}
-          displayKey="symbol"
-          iconKey="logoURI"
-          filterKey="symbol"
-          onClose={() => setModalType(null)}
-          onSelect={(token) => {
-            setSelectedToken(token);
-            setModalType(null);
-          }}
-        />
-      )}
       {modalType === "platform" && (
         <ModalList
           title="Select a platform"
@@ -130,6 +115,15 @@ export default function BuyForm() {
           onClose={() => setModalType(null)}
           onSelect={(p) => {
             setSelectedPlatform(p.label);
+            setModalType(null);
+          }}
+        />
+      )}
+      {modalType === "token" && (
+        <TokenListModal
+          onClose={() => setModalType(null)}
+          onSelect={(token) => {
+            setSelectedToken(token);
             setModalType(null);
           }}
         />
