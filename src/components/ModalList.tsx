@@ -19,7 +19,6 @@ export default function ModalList<T extends { [key: string]: any }>({
   iconKey,
   onClose,
   onSelect,
-  filterKey,
 }: ModalListProps<T>) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [search, setSearch] = useState("")
@@ -66,7 +65,6 @@ export default function ModalList<T extends { [key: string]: any }>({
               onClick={() => onSelect(option)}
               className="w-full text-left flex items-center gap-3 px-4 py-2 hover:bg-[#1a1a1a] rounded"
             >
-              {/* 🌐 Use emoji for platforms */}
               {iconKey && (
                 typeof option[iconKey] === "string" && option[iconKey]?.startsWith("http") ? (
                   <img
