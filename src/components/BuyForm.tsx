@@ -62,7 +62,6 @@ export default function BuyForm() {
       alert("Please fill out all required fields.")
       return
     }
-    // Proceed with login logic here
   }
 
   return (
