@@ -14,11 +14,13 @@ export default function DropdownRow({ label, value, icon, onClick }: Props) {
       <span className="text-sm text-gray-400">{label}</span>
       <div className="flex items-center gap-2">
         {icon && (
-          <img
-            src={icon}
-            alt="flag"
-            className="w-6 h-[18px] object-cover rounded-sm shadow-sm ring-1 ring-gray-700"
-          />
+          <div className="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center bg-gray-800">
+            <img
+              src={icon}
+              alt="flag"
+              className="w-[140%] h-[140%] object-cover"
+            />
+          </div>
         )}
         <span className="text-white font-medium">{value || "Select"}</span>
         <svg

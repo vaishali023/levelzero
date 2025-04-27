@@ -42,7 +42,7 @@ export default function BuyForm() {
     setSelectedCurrency({
       code: "CAD",
       name: "Canadian Dollar",
-      flag: "https://flagcdn.com/48x36/ca.png",
+      flag: "https://flagcdn.com/w40/ca.png",
     })
     getWalletAddress().then(setWalletAddress)
   }, [])

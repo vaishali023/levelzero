@@ -33,11 +33,13 @@ export default function InputWithDropdown({
           className="flex items-center gap-2 px-3 py-1 bg-[#111] border border-[#2a2d3a] hover:border-white/30 rounded-full transition"
         >
           {icon && (
-            <img
-              src={icon}
-              alt="flag"
-              className="w-5 h-4 object-contain rounded ring-1 ring-white/20"
-            />
+            <div className="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center bg-gray-800">
+              <img
+                src={icon}
+                alt="flag"
+                className="w-[140%] h-[140%] object-cover"
+              />
+            </div>
           )}
           <span className="text-white text-sm font-medium">{dropdownValue}</span>
           <svg

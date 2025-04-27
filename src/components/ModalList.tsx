@@ -54,7 +54,7 @@ export default function ModalList<T extends { [key: string]: any }>({
             placeholder={searchPlaceholder}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-3 py-2 rounded bg-[#1a1a1a] mb-4 border border-gray-700"
+            className="w-full px-3 py-2 rounded bg-[#1a1a1a] mb-4 border border-gray-700 focus:border-[#AB9AFF] focus:outline-none transition-colors"
           />
         )}
 
@@ -67,11 +67,13 @@ export default function ModalList<T extends { [key: string]: any }>({
             >
               {iconKey && (
                 typeof option[iconKey] === "string" && option[iconKey]?.startsWith("http") ? (
-                  <img
-                    src={option[iconKey]}
-                    alt=""
-                    className="w-6 h-6 rounded-full"
-                  />
+                  <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-800">
+                    <img
+                      src={option[iconKey]}
+                      alt=""
+                      className="w-[140%] h-[140%] object-cover"
+                    />
+                  </div>
                 ) : (
                   <span className="text-lg">🌐</span>
                 )
