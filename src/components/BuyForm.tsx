@@ -5,8 +5,7 @@ import ModalList from "./ModalList";
 import { currencyList } from "../data/currencies";
 import { platformList } from "../data/platforms";
 import TokenListModal from "../modals/TokenListModal";
-
-// Simulate wallet connection (replace this with actual ArConnect logic)
+import { Token } from "../data/tokens";
 const getWalletAddress = async (): Promise<string | null> => {
   try {
     const address = await window.arweaveWallet.getActiveAddress()
@@ -16,10 +15,6 @@ const getWalletAddress = async (): Promise<string | null> => {
   }
 }
 
-type Token = {
-  symbol: string
-  logoURI?: string
-}
 
 type Currency = {
   code: string
@@ -144,7 +139,7 @@ export default function BuyForm() {
         />
       )}
 
-      {modalType === "token" && (
+{modalType === "token" && (
         <TokenListModal
           onClose={() => setModalType(null)}
           onSelect={(token) => {
