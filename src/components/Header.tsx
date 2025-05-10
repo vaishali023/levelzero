@@ -1,7 +1,11 @@
 import { ConnectButton } from "@arweave-wallet-kit/react";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import HeaderDropdown from "./HeaderDropdown";
 
 export default function Header() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const navItems = [
     { name: "Buy", path: "/buy" },
     { name: "Sell", path: "/sell" },
@@ -21,17 +25,27 @@ export default function Header() {
                 `capitalize text-sm font-medium transition duration-150 ${
                   isActive
                     ? "text-white underline underline-offset-4"
-                    : "text-gray-400 hover:text-white no-underline "
+                    : "text-gray-400 hover:text-white no-underline"
                 }`
               }
             >
               {name}
             </NavLink>
           ))}
+          <div className="relative">
+            <button 
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="text-gray-400 hover:text-white text-2xl font-medium transition duration-150 flex items-center px-1"
+              aria-label="More options"
+            >
+              <span className="leading-none">⋯</span>
+            </button>
+            <HeaderDropdown 
+              isOpen={isDropdownOpen} 
+              onClose={() => setIsDropdownOpen(false)} 
+            />
+          </div>
         </nav>
-        <div className="relative">
-          <button className="">...</button>
-        </div>
       </div>
       <ConnectButton
         accent="rgb(171 154 255)"

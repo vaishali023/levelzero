@@ -60,7 +60,7 @@ export default function BuyForm() {
   }
 
   return (
-    <div className="w-full max-w-md space-y-4 bg-[#0d0f1a] p-6 rounded-xl shadow-md">
+    <div className="w-full max-w-md space-y-4 bg-[#0d0f1a] p-6 rounded-xl shadow-md border border-[#2a2d3a]">
       <InputWithDropdown
         label="You send"
         value={amountSend}
